@@ -121,6 +121,7 @@ Custom property                               | Description                     
   <template>
     <style>
 
+      :host,
       :host ::content {
         /**
          * The width for the expandible item is:
@@ -138,6 +139,7 @@ Custom property                               | Description                     
         };
       }
 
+      .app-grid,
       :host ::content .app-grid {
         display: -ms-flexbox;
         display: -webkit-flex;
@@ -156,6 +158,7 @@ Custom property                               | Description                     
         box-sizing: border-box;
       }
 
+      .app-grid > *,
       :host ::content .app-grid > * {
         /* Required for IE 10 */
         -ms-flex: 1 1 100%;
@@ -173,16 +176,19 @@ Custom property                               | Description                     
         box-sizing: border-box;
       }
 
+      .app-grid[has-aspect-ratio] > *,
       :host ::content .app-grid[has-aspect-ratio] > * {
         position: relative;
       }
 
+      .app-grid[has-aspect-ratio] > *::before,
       :host ::content .app-grid[has-aspect-ratio] > *::before {
         display: block;
         content: "";
         padding-top: var(--app-grid-item-height, 100%);
       }
 
+      .app-grid[has-aspect-ratio] > * > *,
       :host ::content .app-grid[has-aspect-ratio] > * > * {
         position: absolute;
         top: 0;
